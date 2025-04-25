@@ -1,0 +1,18 @@
+{
+	"recipes": [
+	  {
+	    "id": 1,
+	    "name": "Masor Tenga",
+	    "ingredients": ["Rohu fish", "Tomatoes", "Lemon", "Ginger", "Garlic", "Mustard oil", "Green chilies", "Coriander leaves"],
+	    "instructions": ["Marinate fish...", "Heat oil...", "..."],
+	    "category": "Fish Curry"
+	  },
+	  {
+	    "id": 2,
+	    "name": "Aloo Pitika",
+	    "ingredients": ["Boiled potatoes", "Onion", "Green chilies", "Mustard oil", "Coriander leaves", "Salt"],
+	    "instructions": ["Mash potatoes...", "Add other ingredients...", "Mix well."],
+	    "category": "Side Dish"
+	  }
+	]
+   }

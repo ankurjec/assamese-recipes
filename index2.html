@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assamese Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern and Interactive CSS */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-list-container {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .recipe-list-container h2 {
+            color: #4CAF50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        .recipe-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recipe-list li {
+            margin-bottom: 12px;
+        }
+
+        .recipe-list a {
+            display: block;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #00897b;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 1px solid #b2ebf2;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .recipe-list a:hover {
+            background-color: #4CAF50;
+            color: white;
+            transform: translateY(-2px);
+            border-color: #4CAF50;
+        }
+
+        .recipe-details {
+            width: 100%;
+            max-width: 700px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            transform: translateY(20px);
+        }
+
+        .recipe-details.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .recipe-details h2 {
+            margin-top: 0;
+            color: #4CAF50;
+            font-size: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .recipe-details p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .recipe-details strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .recipe-details ul {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .recipe-details li {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        #recipeContent {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .recipe-list-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .recipe-list a {
+                font-size: 1rem;
+                padding: 12px;
+            }
+
+            .recipe-details {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .recipe-details h2 {
+                font-size: 1.75rem;
+            }
+
+            .recipe-details p,
+            .recipe-details li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            .recipe-list-container h2 {
+                font-size: 1.25rem;
+            }
+
+            .recipe-list a {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .recipe-details {
+                padding: 15px;
+            }
+
+            .recipe-details h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Assamese Recipes</h1>
+    </header>
+    <main>
+        <div class="recipe-list-container">
+            <h2>Recipes:</h2>
+            <ul id="recipeList" class="recipe-list">
+                </ul>
+        </div>
+        <div class="recipe-details" id="recipeDetails">
+            <h2>Recipe Details</h2>
+            <div id="recipeContent">
+                </div>
+        </div>
+    </main>
+
+    <!-- <script>
+
+        const recipeListElement = document.getElementById('recipeList');
+        const recipeDetailsElement = document.getElementById('recipeContent');
+        const recipeDetailsContainer = document.getElementById('recipeDetails');
+
+        // Function to fetch and display the list of recipes
+        async function fetchRecipes() {
+            try {
+                const response = await fetch('/recipes');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data && data.recipes) {
+                    data.recipes.forEach(recipe => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.textContent = recipe.name;
+                        link.href = '#';
+                        link.dataset.recipeId = recipe.id; // Store recipe ID
+                        link.addEventListener('click', () => fetchRecipeDetails(recipe.id));
+                        listItem.appendChild(link);
+                        recipeListElement.appendChild(listItem);
+                    });
+                } else {
+                    recipeListElement.innerHTML = '<li>No recipes found.</li>';
+                }
+            } catch (error) {
+                console.error('Error fetching recipes:', error);
+                recipeListElement.innerHTML = '<li>Failed to load recipes. Please check your network connection and API.</li>';
+            }
+        }
+
+        // Function to fetch and display details for a specific recipe
+        async function fetchRecipeDetails(recipeId) {
+            try {
+                const response = await fetch(`/recipes/${recipeId}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const recipe = await response.json();
+                if (recipe) {
+                    let ingredientsHTML = '<ul>';
+                    recipe.ingredients.forEach(ingredient => {
+                        ingredientsHTML += `<li>${ingredient}</li>`;
+                    });
+                    ingredientsHTML += '</ul>';
+
+                    let instructionsHTML = recipe.instructions.map(instruction => `<p>${instruction}</p>`).join('');
+
+                    recipeDetailsElement.innerHTML = `
+                        <h2>${recipe.name}</h2>
+                        <p><strong>Category:</strong> ${recipe.category}</p>
+                        <h3>Ingredients:</h3>
+                        ${ingredientsHTML}
+                        <h3>Instructions:</h3>
+                        ${instructionsHTML}
+                    `;
+                    recipeDetailsContainer.classList.add('show'); // Show details with animation
+                } else {
+                    recipeDetailsElement.innerHTML = '<p>Recipe details not found.</p>';
+                    recipeDetailsContainer.classList.remove('show');
+                }
+            } catch (error) {
+                console.error('Error fetching recipe details:', error);
+                recipeDetailsElement.innerHTML = '<p>Failed to load recipe details. Please check your network connection and API.</p>';
+                recipeDetailsContainer.classList.remove('show');
+            }
+        }
+
+        // Load the initial list of recipes when the page loads
+        fetchRecipes();
+    </script> -->
+
+    <script>
+	const recipeListElement = document.getElementById('recipeList');
+	const recipeDetailsElement = document.getElementById('recipeContent');
+	const recipeDetailsContainer = document.getElementById('recipeDetails');
+	let currentRecipeId = null; // Track currently shown recipe
+ 
+	// Fetch and display the list of recipes
+	async function fetchRecipes() {
+	    try {
+		   const response = await fetch('/recipes');
+		   if (!response.ok) {
+			  throw new Error(`HTTP error! status: ${response.status}`);
+		   }
+		   const data = await response.json();
+		   if (data && data.recipes) {
+			  data.recipes.forEach(recipe => {
+				 const listItem = document.createElement('li');
+				 const link = document.createElement('a');
+				 link.textContent = recipe.name;
+				 link.href = '#';
+				 link.dataset.recipeId = recipe.id;
+				 link.addEventListener('click', (e) => {
+					e.preventDefault();
+					if (currentRecipeId === recipe.id) {
+					    toggleRecipeDetails(); // Hide if same recipe
+					} else {
+					    fetchRecipeDetails(recipe.id);
+					}
+				 });
+				 listItem.appendChild(link);
+				 recipeListElement.appendChild(listItem);
+			  });
+		   } else {
+			  recipeListElement.innerHTML = '<li>No recipes found.</li>';
+		   }
+	    } catch (error) {
+		   console.error('Error fetching recipes:', error);
+		   recipeListElement.innerHTML = '<li>Failed to load recipes. Please check your network connection and API.</li>';
+	    }
+	}
+ 
+	// Toggle the visibility of the recipe details section
+	function toggleRecipeDetails() {
+	    recipeDetailsContainer.classList.remove('show');
+	    currentRecipeId = null;
+	}
+ 
+	// Fetch and display details for a specific recipe
+	async function fetchRecipeDetails(recipeId) {
+	    try {
+		   const response = await fetch(`/recipes/${recipeId}`);
+		   if (!response.ok) {
+			  throw new Error(`HTTP error! status: ${response.status}`);
+		   }
+		   const recipe = await response.json();
+		   if (recipe) {
+			  let ingredientsHTML = '<ul>';
+			  recipe.ingredients.forEach(ingredient => {
+				 ingredientsHTML += `<li>${ingredient}</li>`;
+			  });
+			  ingredientsHTML += '</ul>';
+ 
+			  let instructionsHTML = recipe.instructions.map(instruction => `<p>${instruction}</p>`).join('');
+ 
+			  recipeDetailsElement.innerHTML = `
+				 <h2>${recipe.name}</h2>
+				 <p><strong>Category:</strong> ${recipe.category}</p>
+				 <h3>Ingredients:</h3>
+				 ${ingredientsHTML}
+				 <h3>Instructions:</h3>
+				 ${instructionsHTML}
+			  `;
+			  recipeDetailsContainer.classList.add('show');
+			  currentRecipeId = recipeId;
+		   } else {
+			  recipeDetailsElement.innerHTML = '<p>Recipe details not found.</p>';
+			  recipeDetailsContainer.classList.remove('show');
+			  currentRecipeId = null;
+		   }
+	    } catch (error) {
+		   console.error('Error fetching recipe details:', error);
+		   recipeDetailsElement.innerHTML = '<p>Failed to load recipe details. Please check your network connection and API.</p>';
+		   recipeDetailsContainer.classList.remove('show');
+		   currentRecipeId = null;
+	    }
+	}
+ 
+	fetchRecipes();
+ </script>
+ 
+</body>
+</html>

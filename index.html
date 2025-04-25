@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assamese Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .recipe-list a {
+            cursor: pointer;
+        }
+
+        .recipe-list a:hover {
+            text-decoration: underline;
+        }
+
+        .recipe-details {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #loader {
+            /*display: none;*/ /* Initially hidden, now always present but controlled by opacity */
+            height: 100px; /* Add height to the loader */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Start with 0 opacity */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+
+        .loading-bar {
+            width: 60%;
+            height: 8px;
+            background-color: #ddd;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden; /* Ensure the animation stays within the bar */
+        }
+
+        .loading-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, #4CAF50, #81C784); /* Green gradient */
+            border-radius: 5px;
+            animation: progressBarLoad 1.5s infinite; /* Animation duration and iteration */
+        }
+
+        @keyframes progressBarLoad {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 80%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Assamese Recipes</h1>
+</header>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Recipe List (left column) -->
+        <div class="col-md-4 mb-4" style="margin-top: 120px;">
+            <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Recipe List</h5>
+                </div>
+                <ul class="list-group list-group-flush recipe-list" id="recipeList"></ul>
+            </div>
+        </div>
+
+        <!-- Recipe Details (right column) -->
+        <div class="col-md-8 mb-4">
+            <!-- Loader -->
+            <div id="loader" class="d-flex justify-content-center align-items-center mb-3">
+                <div class="loading-bar"></div>
+            </div>
+
+            <!-- Details -->
+            <div id="recipeDetails" class="recipe-details d-none">
+                <h2 id="recipeTitle"></h2>
+                <p><strong>Category:</strong> <span id="recipeCategory"></span></p>
+                <h5>Ingredients:</h5>
+                <ul id="recipeIngredients"></ul>
+                <h5>Instructions:</h5>
+                <div id="recipeInstructions"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+<script>
+const recipeListElement = document.getElementById('recipeList');
+const loader = document.getElementById('loader');
+const detailsContainer = document.getElementById('recipeDetails');
+const title = document.getElementById('recipeTitle');
+const category = document.getElementById('recipeCategory');
+const ingredients = document.getElementById('recipeIngredients');
+const instructions = document.getElementById('recipeInstructions');
+
+let currentRecipeId = null;
+
+async function fetchRecipes() {
+    try {
+        const response = await fetch('/recipes');
+        const data = await response.json();
+
+        if (data && data.recipes) {
+            data.recipes.forEach(recipe => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('list-group-item');
+                listItem.innerHTML = `<a data-id="${recipe.id}" class="text-success fw-semibold">${recipe.name}</a>`;
+                listItem.querySelector('a').addEventListener('click', () => {
+                    if (currentRecipeId === recipe.id) {
+                        detailsContainer.classList.add('d-none');
+                        currentRecipeId = null;
+                    } else {
+                        fetchRecipeDetails(recipe.id);
+                    }
+                });
+                recipeListElement.appendChild(listItem);
+            });
+        } else {
+            recipeListElement.innerHTML = '<li class="list-group-item text-danger">No recipes found.</li>';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        recipeListElement.innerHTML = '<li class="list-group-item text-danger">Failed to load recipes.</li>';
+    }
+}
+
+async function fetchRecipeDetails(id) {
+    loader.style.opacity = 1; /* Show the loader */
+    detailsContainer.classList.add('d-none');
+    currentRecipeId = id;
+
+    try {
+        const response = await fetch(`/recipes/${id}`);
+        const data = await response.json();
+
+        // Populate data
+        title.textContent = data.name;
+        category.textContent = data.category;
+
+        ingredients.innerHTML = '';
+        data.ingredients.forEach(ing => {
+            const li = document.createElement('li');
+            li.textContent = ing;
+            ingredients.appendChild(li);
+        });
+
+        instructions.innerHTML = '';
+        data.instructions.forEach(inst => {
+            const p = document.createElement('p');
+            p.textContent = inst;
+            instructions.appendChild(p);
+        });
+
+        detailsContainer.classList.remove('d-none');
+        detailsContainer.classList.add('fade-in');
+
+    } catch (error) {
+        console.error('Error loading details:', error);
+        detailsContainer.innerHTML = '<p class="text-danger">Failed to load recipe details.</p>';
+        detailsContainer.classList.remove('d-none');
+    } finally {
+        loader.style.opacity = 0; /* Hide the loader */
+    }
+}
+
+// Initial call
+fetchRecipes();
+</script>
+</body>
+</html>
