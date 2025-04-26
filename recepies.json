@@ -4,15 +4,132 @@
 	    "id": 1,
 	    "name": "Masor Tenga",
 	    "ingredients": ["Rohu fish", "Tomatoes", "Lemon", "Ginger", "Garlic", "Mustard oil", "Green chilies", "Coriander leaves"],
-	    "instructions": ["Marinate fish...", "Heat oil...", "..."],
+	    "instructions": [
+		 "Marinate fish pieces with salt and turmeric. Keep aside for 15 minutes.",
+		 "Heat mustard oil in a pan and fry the fish till golden brown.",
+		 "In the same oil, add chopped ginger and garlic, then sauté chopped tomatoes till soft.",
+		 "Add a little water and bring it to boil. Add the fried fish.",
+		 "Squeeze lemon juice and adjust salt. Cook for a few minutes.",
+		 "Garnish with green chilies and coriander leaves. Serve hot with rice."
+	    ],
 	    "category": "Fish Curry"
 	  },
 	  {
 	    "id": 2,
 	    "name": "Aloo Pitika",
 	    "ingredients": ["Boiled potatoes", "Onion", "Green chilies", "Mustard oil", "Coriander leaves", "Salt"],
-	    "instructions": ["Mash potatoes...", "Add other ingredients...", "Mix well."],
+	    "instructions": [
+		 "Mash boiled potatoes in a bowl.",
+		 "Add finely chopped onions, green chilies, and coriander leaves.",
+		 "Drizzle mustard oil and add salt to taste.",
+		 "Mix well until evenly combined.",
+		 "Serve as a side dish with rice and dal."
+	    ],
 	    "category": "Side Dish"
+	  },
+	  {
+	    "id": 3,
+	    "name": "Khar",
+	    "ingredients": ["Raw papaya", "Khar (alkaline water made from banana peel ash)", "Mustard oil", "Salt"],
+	    "instructions": [
+		 "Peel and slice raw papaya into thin pieces.",
+		 "Heat mustard oil in a pan and sauté the papaya for 5 minutes.",
+		 "Add khar and a little water. Cook until papaya becomes soft.",
+		 "Add salt and mix well. Simmer for a few more minutes.",
+		 "Serve hot with steamed rice."
+	    ],
+	    "category": "Main Course"
+	  },
+	  {
+	    "id": 4,
+	    "name": "Pitika of Bilahi (Tomato Pitika)",
+	    "ingredients": ["Tomatoes", "Onion", "Green chilies", "Mustard oil", "Salt"],
+	    "instructions": [
+		 "Roast tomatoes over an open flame or bake until soft.",
+		 "Peel off the skin and mash in a bowl.",
+		 "Add chopped onions, green chilies, and mustard oil.",
+		 "Add salt to taste and mix well.",
+		 "Serve as a side dish with rice."
+	    ],
+	    "category": "Side Dish"
+	  },
+	  {
+	    "id": 5,
+	    "name": "Ou Tenga Dail",
+	    "ingredients": ["Lentils (yellow moong or toor dal)", "Elephant apple (Ou Tenga)", "Turmeric", "Salt", "Mustard seeds", "Dry red chili", "Mustard oil"],
+	    "instructions": [
+		 "Cook dal with turmeric and salt until soft.",
+		 "Boil chopped elephant apple separately and add to the dal.",
+		 "Heat mustard oil, splutter mustard seeds and red chili for tempering.",
+		 "Pour tempering over the dal and simmer for a few minutes.",
+		 "Serve hot with rice."
+	    ],
+	    "category": "Dal"
+	  },
+	  {
+	    "id": 6,
+	    "name": "Pani Tenga",
+	    "ingredients": ["Sour greens or lemon juice", "Green chilies", "Mustard seeds", "Salt", "Water"],
+	    "instructions": [
+		 "Boil water with salt and chopped green chilies.",
+		 "Add sour greens or lemon juice.",
+		 "Temper with mustard seeds in hot oil.",
+		 "Add tempering to the water mixture.",
+		 "Serve as a soup or palate cleanser."
+	    ],
+	    "category": "Soup"
+	  },
+	  {
+	    "id": 7,
+	    "name": "Bora Saulor Payas",
+	    "ingredients": ["Sticky rice (bora saul)", "Milk", "Sugar", "Cardamom", "Bay leaf", "Cashews", "Raisins"],
+	    "instructions": [
+		 "Wash and soak bora saul for 30 minutes.",
+		 "Boil milk and add the soaked rice.",
+		 "Cook on low flame until the rice is soft and the milk thickens.",
+		 "Add sugar, cardamom, and bay leaf. Stir well.",
+		 "Add fried cashews and raisins. Serve warm or chilled."
+	    ],
+	    "category": "Dessert"
+	  },
+	  {
+	    "id": 8,
+	    "name": "Duck Curry with Kumura",
+	    "ingredients": ["Duck meat", "White gourd (kumura)", "Ginger-garlic paste", "Onions", "Mustard oil", "Spices", "Salt"],
+	    "instructions": [
+		 "Marinate duck pieces with spices and salt.",
+		 "Heat mustard oil and sauté chopped onions until golden.",
+		 "Add ginger-garlic paste and cook until raw smell disappears.",
+		 "Add duck meat and cook until browned.",
+		 "Add kumura pieces and cook until both duck and gourd are soft.",
+		 "Serve hot with rice."
+	    ],
+	    "category": "Meat Curry"
+	  },
+	  {
+	    "id": 9,
+	    "name": "Poita Bhat",
+	    "ingredients": ["Leftover rice", "Mustard oil", "Onion", "Green chili", "Salt"],
+	    "instructions": [
+		 "Soak cooked rice overnight in water.",
+		 "Drain and mash lightly in the morning.",
+		 "Add chopped onions, green chilies, mustard oil, and salt.",
+		 "Mix well and serve with mashed potatoes or chutney."
+	    ],
+	    "category": "Traditional Breakfast"
+	  },
+	  {
+	    "id": 10,
+	    "name": "Thekera Tenga",
+	    "ingredients": ["Thekera (dried mangosteen)", "Water", "Salt", "Sugar (optional)"],
+	    "instructions": [
+		 "Soak thekera in warm water until it softens.",
+		 "Boil in water with salt and a bit of sugar if needed.",
+		 "Simmer until thekera releases its sourness.",
+		 "Serve as a tangy side dish or palate cleanser."
+	    ],
+	    "category": "Sour Side Dish"
 	  }
 	]
    }
+   

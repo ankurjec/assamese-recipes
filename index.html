@@ -19,10 +19,12 @@
 
         .recipe-list a {
             cursor: pointer;
+            text-decoration: none;
         }
 
         .recipe-list a:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            color: #388e3c;
         }
 
         .recipe-details {
@@ -33,14 +35,13 @@
         }
 
         #loader {
-            /*display: none;*/ /* Initially hidden, now always present but controlled by opacity */
-            height: 100px; /* Add height to the loader */
+            height: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            opacity: 0; /* Start with 0 opacity */
-            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .loading-bar {
@@ -49,7 +50,7 @@
             background-color: #ddd;
             border-radius: 5px;
             position: relative;
-            overflow: hidden; /* Ensure the animation stays within the bar */
+            overflow: hidden;
         }
 
         .loading-bar::before {
@@ -59,18 +60,20 @@
             left: 0;
             width: 0%;
             height: 100%;
-            background: linear-gradient(to right, #4CAF50, #81C784); /* Green gradient */
+            background: linear-gradient(to right, #4CAF50, #81C784);
             border-radius: 5px;
-            animation: progressBarLoad 1.5s infinite; /* Animation duration and iteration */
+            animation: progressBarLoad 1.5s infinite;
         }
 
         @keyframes progressBarLoad {
             0% {
                 width: 0%;
             }
+
             50% {
                 width: 80%;
             }
+
             100% {
                 width: 100%;
             }
@@ -84,54 +87,98 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
 
+        .list-group-item {
+            transition: transform 0.2s ease;
+        }
+
+        .list-group-item:hover {
+            transform: scale(1.02);
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Assamese Recipes</h1>
+    <h1 id="pageTitle">Assamese Recipes</h1>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="languageText">Language</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+            <li><a class="dropdown-item" href="#" data-lang="as">Assamese</a></li>
+        </ul>
+    </div>
 </header>
 
 <div class="container mt-4">
     <div class="row">
-        <!-- Recipe List (left column) -->
         <div class="col-md-4 mb-4" style="margin-top: 120px;">
             <div class="card h-100">
                 <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Recipe List</h5>
+                    <h5 class="mb-0" id="recipeListTitle">Recipe List</h5>
                 </div>
+                <input type="text" id="search" class="form-control my-2" placeholder="Search recipes...">
                 <ul class="list-group list-group-flush recipe-list" id="recipeList"></ul>
             </div>
         </div>
 
-        <!-- Recipe Details (right column) -->
         <div class="col-md-8 mb-4">
-            <!-- Loader -->
             <div id="loader" class="d-flex justify-content-center align-items-center mb-3">
                 <div class="loading-bar"></div>
             </div>
 
-            <!-- Details -->
             <div id="recipeDetails" class="recipe-details d-none">
                 <h2 id="recipeTitle"></h2>
-                <p><strong>Category:</strong> <span id="recipeCategory"></span></p>
-                <h5>Ingredients:</h5>
+                <p><strong id="categoryLabel">Category:</strong> <span id="recipeCategory"></span></p>
+                <p><strong id="typeLabel">Type:</strong> <span id="recipeType"></span></p>
+                <h5 id="ingredientsLabel">Ingredients:</h5>
                 <ul id="recipeIngredients"></ul>
-                <h5>Instructions:</h5>
+                <p><strong id="cookingTimeLabel">Cooking time:</strong> <span id="cooking_time"></span></p>
+                <p><strong id="difficultyLabel">Difficulty:</strong> <span id="difficulty"></span></p>
+                <h5 id="instructionsLabel">Instructions:</h5>
                 <div id="recipeInstructions"></div>
             </div>
         </div>
     </div>
 </div>
-
- 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+const languageData = {
+    en: {
+        pageTitle: "Assamese Recipes",
+        recipeListTitle: "Recipe List",
+        languageText: "Language",
+        categoryLabel: "Category",
+        typeLabel: "Type",
+        ingredientsLabel: "Ingredients",
+        cookingTimeLabel: "Cooking time",
+        difficultyLabel: "Difficulty",
+        instructionsLabel: "Instructions",
+        searchPlaceholder: "Search recipes...",
+    },
+    as: {
+        pageTitle: "আসামী ৰেচিপী",
+        recipeListTitle: "ৰেচিপী তালিকা",
+        languageText: "ভাষা",
+        categoryLabel: "শ্ৰেণী",
+        typeLabel: "প্ৰকাৰ",
+        ingredientsLabel: "উপাদান",
+        cookingTimeLabel: "ৰান্ধনী সময়",
+        difficultyLabel: "কঠিনতা",
+        instructionsLabel: "নিৰ্দেশনা",
+        searchPlaceholder: "ৰেচিপী সন্ধান কৰক...",
+    }
+};
+
 const recipeListElement = document.getElementById('recipeList');
 const loader = document.getElementById('loader');
 const detailsContainer = document.getElementById('recipeDetails');
@@ -139,8 +186,46 @@ const title = document.getElementById('recipeTitle');
 const category = document.getElementById('recipeCategory');
 const ingredients = document.getElementById('recipeIngredients');
 const instructions = document.getElementById('recipeInstructions');
+const cooking_time = document.getElementById('cooking_time');
+const difficulty = document.getElementById('difficulty');
+const searchInput = document.getElementById('search');
+const recipeType = document.getElementById('recipeType');
+const pageTitle = document.getElementById('pageTitle');
+const categoryLabel = document.getElementById('categoryLabel');
+const typeLabel = document.getElementById('typeLabel');
+const ingredientsLabel = document.getElementById('ingredientsLabel');
+const cookingTimeLabel = document.getElementById('cookingTimeLabel');
+const difficultyLabel = document.getElementById('difficultyLabel');
+const instructionsLabel = document.getElementById('instructionsLabel');
+const languageText = document.getElementById('languageText');
+const languageDropdownItems = document.querySelectorAll('.dropdown-item');
 
 let currentRecipeId = null;
+let allRecipes = [];
+let currentLanguage = 'en';
+
+function setLanguage(language) {
+    currentLanguage = language;
+    const translations = languageData[language];
+
+    pageTitle.textContent = translations.pageTitle;
+    document.getElementById('recipeListTitle').textContent = translations.recipeListTitle;
+    document.getElementById('languageText').textContent = translations.languageText;
+    categoryLabel.textContent = translations.categoryLabel;
+    typeLabel.textContent = translations.typeLabel;
+    ingredientsLabel.textContent = translations.ingredientsLabel;
+    cookingTimeLabel.textContent = translations.cookingTimeLabel;
+    difficultyLabel.textContent = translations.difficultyLabel;
+    instructionsLabel.textContent = translations.instructionsLabel;
+    searchInput.placeholder = translations.searchPlaceholder;
+}
+
+languageDropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const lang = e.target.getAttribute('data-lang');
+        setLanguage(lang);
+    });
+});
 
 async function fetchRecipes() {
     try {
@@ -148,20 +233,8 @@ async function fetchRecipes() {
         const data = await response.json();
 
         if (data && data.recipes) {
-            data.recipes.forEach(recipe => {
-                const listItem = document.createElement('li');
-                listItem.classList.add('list-group-item');
-                listItem.innerHTML = `<a data-id="${recipe.id}" class="text-success fw-semibold">${recipe.name}</a>`;
-                listItem.querySelector('a').addEventListener('click', () => {
-                    if (currentRecipeId === recipe.id) {
-                        detailsContainer.classList.add('d-none');
-                        currentRecipeId = null;
-                    } else {
-                        fetchRecipeDetails(recipe.id);
-                    }
-                });
-                recipeListElement.appendChild(listItem);
-            });
+            allRecipes = data.recipes;
+            displayRecipes(data.recipes);
         } else {
             recipeListElement.innerHTML = '<li class="list-group-item text-danger">No recipes found.</li>';
         }
@@ -171,8 +244,26 @@ async function fetchRecipes() {
     }
 }
 
+function displayRecipes(recipes) {
+    recipeListElement.innerHTML = '';
+    recipes.forEach(recipe => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        listItem.innerHTML = `<a data-id="${recipe.id}" class="text-success fw-semibold">${recipe.name}</a>`;
+        listItem.querySelector('a').addEventListener('click', () => {
+            if (currentRecipeId === recipe.id) {
+                detailsContainer.classList.add('d-none');
+                currentRecipeId = null;
+            } else {
+                fetchRecipeDetails(recipe.id);
+            }
+        });
+        recipeListElement.appendChild(listItem);
+    });
+}
+
 async function fetchRecipeDetails(id) {
-    loader.style.opacity = 1; /* Show the loader */
+    loader.style.opacity = 1;
     detailsContainer.classList.add('d-none');
     currentRecipeId = id;
 
@@ -180,7 +271,6 @@ async function fetchRecipeDetails(id) {
         const response = await fetch(`/recipes/${id}`);
         const data = await response.json();
 
-        // Populate data
         title.textContent = data.name;
         category.textContent = data.category;
 
@@ -198,6 +288,14 @@ async function fetchRecipeDetails(id) {
             instructions.appendChild(p);
         });
 
+        cooking_time.textContent = data.cooking_time;
+        difficulty.textContent = data.difficulty || "Not specified";
+
+        const vegNonVeg = data.is_veg ? "Veg" : "Non-Veg";
+        const vegNonVegClass = data.is_veg ? "badge bg-success" : "badge bg-danger";
+        recipeType.textContent = vegNonVeg;
+        recipeType.className = vegNonVegClass;
+
         detailsContainer.classList.remove('d-none');
         detailsContainer.classList.add('fade-in');
 
@@ -206,12 +304,20 @@ async function fetchRecipeDetails(id) {
         detailsContainer.innerHTML = '<p class="text-danger">Failed to load recipe details.</p>';
         detailsContainer.classList.remove('d-none');
     } finally {
-        loader.style.opacity = 0; /* Hide the loader */
+        loader.style.opacity = 0;
     }
 }
 
-// Initial call
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredRecipes = allRecipes.filter(recipe => {
+        return recipe.name.toLowerCase().includes(searchTerm);
+    });
+    displayRecipes(filteredRecipes);
+});
+
 fetchRecipes();
+setLanguage(currentLanguage); // Set initial language to English
 </script>
 </body>
 </html>

@@ -3,6 +3,11 @@
 	  {
 	    "id": 1,
 	    "name": "Masor Tenga",
+	    "is_veg": false,
+	    "cooking_time": "30 mins",
+	    "difficulty": "Medium",
+	    "tags": ["fish", "tangy", "traditional"],
+	    "image": "/images/masor_tenga.jpg",
 	    "ingredients": ["Rohu fish", "Tomatoes", "Lemon", "Ginger", "Garlic", "Mustard oil", "Green chilies", "Coriander leaves"],
 	    "instructions": [
 		 "Marinate fish pieces with salt and turmeric. Keep aside for 15 minutes.",
@@ -17,6 +22,11 @@
 	  {
 	    "id": 2,
 	    "name": "Aloo Pitika",
+	    "is_veg": true,
+	    "cooking_time": "15 mins",
+	    "difficulty": "Easy",
+	    "tags": ["potato", "side", "quick"],
+	    "image": "/images/aloo_pitika.jpg",
 	    "ingredients": ["Boiled potatoes", "Onion", "Green chilies", "Mustard oil", "Coriander leaves", "Salt"],
 	    "instructions": [
 		 "Mash boiled potatoes in a bowl.",
@@ -30,6 +40,11 @@
 	  {
 	    "id": 3,
 	    "name": "Khar",
+	    "is_veg": true,
+	    "cooking_time": "25 mins",
+	    "difficulty": "Easy",
+	    "tags": ["papaya", "alkaline", "traditional"],
+	    "image": "/images/khar.jpg",
 	    "ingredients": ["Raw papaya", "Khar (alkaline water made from banana peel ash)", "Mustard oil", "Salt"],
 	    "instructions": [
 		 "Peel and slice raw papaya into thin pieces.",
@@ -43,6 +58,11 @@
 	  {
 	    "id": 4,
 	    "name": "Pitika of Bilahi (Tomato Pitika)",
+	    "is_veg": true,
+	    "cooking_time": "20 mins",
+	    "difficulty": "Easy",
+	    "tags": ["tomato", "roasted", "side"],
+	    "image": "/images/tomato_pitika.jpg",
 	    "ingredients": ["Tomatoes", "Onion", "Green chilies", "Mustard oil", "Salt"],
 	    "instructions": [
 		 "Roast tomatoes over an open flame or bake until soft.",
@@ -56,6 +76,11 @@
 	  {
 	    "id": 5,
 	    "name": "Ou Tenga Dail",
+	    "is_veg": true,
+	    "cooking_time": "30 mins",
+	    "difficulty": "Medium",
+	    "tags": ["dal", "sour", "traditional"],
+	    "image": "/images/ou_tenga_dail.jpg",
 	    "ingredients": ["Lentils (yellow moong or toor dal)", "Elephant apple (Ou Tenga)", "Turmeric", "Salt", "Mustard seeds", "Dry red chili", "Mustard oil"],
 	    "instructions": [
 		 "Cook dal with turmeric and salt until soft.",
@@ -69,6 +94,11 @@
 	  {
 	    "id": 6,
 	    "name": "Pani Tenga",
+	    "is_veg": true,
+	    "cooking_time": "15 mins",
+	    "difficulty": "Easy",
+	    "tags": ["sour", "cleanser", "soup"],
+	    "image": "/images/pani_tenga.jpg",
 	    "ingredients": ["Sour greens or lemon juice", "Green chilies", "Mustard seeds", "Salt", "Water"],
 	    "instructions": [
 		 "Boil water with salt and chopped green chilies.",
@@ -82,6 +112,11 @@
 	  {
 	    "id": 7,
 	    "name": "Bora Saulor Payas",
+	    "is_veg": true,
+	    "cooking_time": "45 mins",
+	    "difficulty": "Medium",
+	    "tags": ["sweet", "dessert", "traditional"],
+	    "image": "/images/bora_saulor_payas.jpg",
 	    "ingredients": ["Sticky rice (bora saul)", "Milk", "Sugar", "Cardamom", "Bay leaf", "Cashews", "Raisins"],
 	    "instructions": [
 		 "Wash and soak bora saul for 30 minutes.",
@@ -95,6 +130,11 @@
 	  {
 	    "id": 8,
 	    "name": "Duck Curry with Kumura",
+	    "is_veg": false,
+	    "cooking_time": "60 mins",
+	    "difficulty": "Hard",
+	    "tags": ["meat", "gourd", "spicy"],
+	    "image": "/images/duck_curry_kumura.jpg",
 	    "ingredients": ["Duck meat", "White gourd (kumura)", "Ginger-garlic paste", "Onions", "Mustard oil", "Spices", "Salt"],
 	    "instructions": [
 		 "Marinate duck pieces with spices and salt.",
@@ -109,6 +149,11 @@
 	  {
 	    "id": 9,
 	    "name": "Poita Bhat",
+	    "is_veg": true,
+	    "cooking_time": "10 mins (after overnight soaking)",
+	    "difficulty": "Easy",
+	    "tags": ["fermented", "breakfast", "light"],
+	    "image": "/images/poita_bhat.jpg",
 	    "ingredients": ["Leftover rice", "Mustard oil", "Onion", "Green chili", "Salt"],
 	    "instructions": [
 		 "Soak cooked rice overnight in water.",
@@ -121,6 +166,11 @@
 	  {
 	    "id": 10,
 	    "name": "Thekera Tenga",
+	    "is_veg": true,
+	    "cooking_time": "20 mins",
+	    "difficulty": "Easy",
+	    "tags": ["sour", "side", "light"],
+	    "image": "/images/thekera_tenga.jpg",
 	    "ingredients": ["Thekera (dried mangosteen)", "Water", "Salt", "Sugar (optional)"],
 	    "instructions": [
 		 "Soak thekera in warm water until it softens.",
