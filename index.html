@@ -10,6 +10,44 @@
             background-color: #f8f8f8;
         }
 
+        /* Add a responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px; /* Reduce top margin */
+    }
+
+    /* Make the recipe details container fit the mobile view */
+    #recipeDetails {
+        margin-top: 20px;
+        max-height: 80vh; /* Limit the height to 80% of the viewport height */
+        overflow-y: auto; /* Allow vertical scrolling if content overflows */
+        padding: 20px;
+    }
+
+    /* Adjust the loader's size and visibility on smaller screens */
+    #loader {
+        height: 50px;
+        justify-content: center;
+    }
+
+    .loading-bar {
+        width: 80%; /* Reduce the width of the loading bar on small screens */
+    }
+
+    /* Adjust font sizes for smaller screens */
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .card-header h5 {
+        font-size: 1.2em;
+    }
+
+    .list-group-item {
+        font-size: 1.1em;
+    }
+}
+
         header {
             background-color: #4CAF50;
             padding: 20px;
@@ -298,6 +336,12 @@ async function fetchRecipeDetails(id) {
 
         detailsContainer.classList.remove('d-none');
         detailsContainer.classList.add('fade-in');
+
+        // Scroll to the recipe details container
+        detailsContainer.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
 
     } catch (error) {
         console.error('Error loading details:', error);
