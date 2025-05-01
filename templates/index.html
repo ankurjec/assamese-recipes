@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Assamese Receipies | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="static/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<style>
+    .single-top-catagory img {
+        height: 300px; /* or whatever height you prefer */
+        object-fit: cover; /* this will maintain good aspect ratio */
+        width: 100%; /* ensure it fits the container */
+    }
+
+    .single-best-receipe-area img {
+        height: 250px; /* or any height you prefer */
+        width: 100%; /* make image full width */
+        object-fit: cover; /* crop nicely without distortion */
+    }
+</style>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="static/img/core-img/salad.png" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="Type any keywords...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-between">
+                    <!-- Breaking News -->
+                    <div class="col-12 col-sm-6">
+                        <div class="breaking-news">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">In taste it's Assam, at heart it's Assamese cuisine.</a></li>
+                                    <li><a href="#">Assamese food — a blend of love, tradition, and simplicity.</a></li>
+                                    <li><a href="#">Assamese cooking, straight from the heart.</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Social Info -->
+                    <div class="col-12 col-sm-6">
+                        <div class="top-social-info text-right">
+                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="delicious-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="deliciousNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="/">
+                            
+                            <!-- <img src="static/img/core-img/logo.png" alt=""> -->
+                        
+                            <img src="static/img/LOGO.png" alt="Logo" width="145" height="50">
+
+                        </a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <!-- <li><a href="#">Pages</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="blog-post.html">Blog Post</a></li>
+                                            <li><a href="receipe-post.html">Receipe Post</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="elements.html">Elements</a></li>
+                                            <li><a href="#">Dropdown</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="blog-post.html">Blog Post</a></li>
+                                                    <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="elements.html">Elements</a></li>
+                                                    <li><a href="#">Dropdown</a>
+                                                        <ul class="dropdown">
+                                                            <li><a href="index.html">Home</a></li>
+                                                            <li><a href="about.html">About Us</a></li>
+                                                            <li><a href="blog-post.html">Blog Post</a></li>
+                                                            <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                            <li><a href="contact.html">Contact</a></li>
+                                                            <li><a href="elements.html">Elements</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li> -->
+                                    <!-- <li><a href="#">Mega Menu</a>
+                                        <div class="megamenu">
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-4">
+                                                <li class="title">Catagory</li>
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="blog-post.html">Blog Post</a></li>
+                                                <li><a href="receipe-post.html">Receipe Post</a></li>
+                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="elements.html">Elements</a></li>
+                                            </ul>
+                                            <div class="single-mega cn-col-4">
+                                                <div class="receipe-slider owl-carousel">
+                                                    <a href="#"><img src="img/bg-img/bg1.jpg" alt=""></a>
+                                                    <a href="#"><img src="img/bg-img/bg6.jpg" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li> -->
+                                    <!-- <li><a href="receipe-post.html">Receipies</a></li> -->
+                                    <!-- <li><a href="receipe-post.html">4 Vegans</a></li> -->
+                                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                                </ul>
+
+                                <!-- Newsletter Form -->
+                                <div class="search-btn">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(static/img/thali.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">ঘৰুৱা সুস্বাদু ব্যঞ্জন</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">প্ৰতিটো ৰন্ধন এক নতুন কাহিনী, সোৱাদৰ ৰঙেৰে ভৰা।</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(static/img/bg-img/bg6.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">কম খৰচতে অপৰূপ সোৱাদ</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">সহজ সামগ্ৰী, অতুলনীয় সোৱাদ - এইয়াই অসমীয়া ৰন্ধনৰ জাদু।</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide bg-img" style="background-image: url(static/img/banner2.jpg);">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <h2 data-animation="fadeInUp" data-delay="300ms">সোৱাদৰ এক নতুন আৰম্ভণি</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">আহক, আমি মিলি অসমীয়া সোৱাদৰ যাত্ৰা আৰম্ভ কৰোঁ।</p>
+                                <a href="#" class="btn delicious-btn" data-animation="fadeInUp" data-delay="1000ms">See Receipe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Top Catagory Area Start ##### -->
+    <section class="top-catagory-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Top Catagory Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-catagory">
+                        <img src="static/img/masorTenga.jpg" alt="">
+                        <!-- Content -->
+                        <div class="top-cta-content">
+                            <h3>Masor Tenga</h3>
+                            <h6>Simple &amp; Delicios</h6>
+                            <a href="receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top Catagory Area -->
+                <div class="col-12 col-lg-6">
+                    <div class="single-top-catagory">
+                        <img src="static/img/Aloo-Pitika_F.jpg" alt="">
+                        <!-- Content -->
+                        <div class="top-cta-content">
+                            <h3>Aloo Pitika</h3>
+                            <h6>Simple &amp; Delicios</h6>
+                            <a href="static/receipe-post.html" class="btn delicious-btn">See Full Receipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Top Catagory Area End ##### -->
+
+    <!-- ##### Best Receipe Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>The best Receipies</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                <div class="container">
+                   <div class="row" id="recipesContainer">
+                       
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="row">
+                                {% for recipe in recipes %}
+                                        <div class="single-best-receipe-area mb-30">
+                                            <img src="{{ recipe.image }}" alt="">
+                                            <div class="receipe-content">
+                                                <a href="receipe-post.html">
+                                                    <h5>{{ recipe.name }}</h5>
+                                                </a>
+                                                <div class="ratings">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            
+                        </div>
+                    </div> 
+                
+                    </div>
+                </div> -->
+                <div class="container">
+                    <div class="row" id="recipesContainer">
+                        {% for recipe in recipes %}
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="single-best-receipe-area mb-30">
+                                    <img src="{{ recipe.image }}" alt="">
+                                    <div class="receipe-content">
+                                        <!-- <a href="recipe_post.html">
+                                            <h5>{{ recipe.name }}</h5>
+                                        </a> -->
+                                        <a href="{{ url_for('recipe_post', recipe_id=recipe.id) }}">
+                                            <h5>{{ recipe.name }}</h5>
+                                        </a>
+                                        <!-- <div class="ratings">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </div> -->
+
+                                        <div class="ratings">
+                                            {% for i in range(recipe.rating) %}
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            {% endfor %}
+                                            {% for i in range(5 - recipe.rating) %}
+                                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                <template id="recipe-card-template">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-best-receipe-area mb-30">
+                            <img src="" alt="" data-recipe-image>
+                            <div class="receipe-content">
+                                <a href="#" data-recipe-link>
+                                    <h5 data-recipe-title>fff</h5>
+                                </a>
+                                <div class="ratings" data-recipe-ratings>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Best Receipe Area End ##### -->
+
+    <!-- ##### CTA Area Start ##### -->
+    <section class="cta-area bg-img bg-overlay" style="background-image: url(static/img/bg-img/bg4.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <!-- Cta Content -->
+                    <div class="cta-content text-center">
+                        <h2>সুঁৱাদত আছে মৰমৰ স্পৰ্শ!</h2>
+                        <p>খাদ্য মাথোঁ দেহৰ পোহাৰ নহয়,
+                            ই মানৱতাৰ এক ভাষা — সঁচা হৃদয়।</p>
+                        <a href="#" class="btn delicious-btn">Discover all the receipies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### CTA Area End ##### -->
+
+    <!-- ##### Small Receipe Area Start ##### -->
+    <section class="small-receipe-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+
+                <!-- Small Receipe Area -->
+                {% for recipe in recipes %}
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-small-receipe-area d-flex">
+                        <!-- Recipe Thumb -->
+                        <div class="receipe-thumb">
+                            <img src="{{ recipe.image }}" alt="">
+                        </div>
+                        <!-- Recipe Content -->
+                        <div class="receipe-content">
+                            <span>{{ recipe.date_published }}</span>
+                            <a href="/recipe/{{ recipe.id }}">
+                                <h5>{{ recipe.name }}</h5>
+                            </a>
+                            <div class="ratings">
+                                {% for i in range(recipe.rating|int) %}
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                {% endfor %}
+                                {% for i in range(5 - recipe.rating|int) %}
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                {% endfor %}
+                            </div>
+                            <p>{{ recipe.comments_count }} Comments</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+
+            </div>
+        </div>
+    </section>
+    <!-- ##### Small Receipe Area End ##### -->
+
+    <!-- ##### Quote Subscribe Area Start ##### -->
+    <section class="quote-subscribe-adds">
+        <div class="container">
+            <div class="row align-items-end">
+                <!-- Quote -->
+                <div class="col-12 col-lg-4">
+                    <div class="quote-area text-center">
+                        <span>"</span>
+                        <h4>ৰান্ধনী এটা শিল্প, সুঁৱাদে বাঁধে হৃদয়ৰ সুঁতালি।
+                            প্ৰেমেৰে ৰান্ধা খাদ্যই মাথোঁ তৃপ্তি নিদিয়ে, স্মৃতি বনায়।</h4>
+                        <p>John Smith</p>
+                        <div class="date-comments d-flex justify-content-between">
+                            <div class="date">January 04, 2018</div>
+                            <div class="comments">2 Comments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-12 col-lg-4">
+                    <div class="newsletter-area">
+                        <h4>Subscribe to our newsletter</h4>
+                        <!-- Form -->
+                        <div class="newsletter-form bg-img bg-overlay" style="background-image: url(static/img/masorTenga.jpg);">
+                            <form action="#" method="post">
+                                <input type="email" name="email" placeholder="Subscribe to newsletter">
+                                <button type="submit" class="btn delicious-btn w-100">Subscribe</button>
+                            </form>
+                            <p>Fusce nec ante vitae lacus aliquet vulputate. Donec sceleri sque accumsan molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adds -->
+                <div class="col-12 col-lg-4">
+                    <div class="delicious-add">
+                        <img src="static/img/bg-img/add.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Quote Subscribe Area End ##### -->
+
+    <!-- ##### Follow Us Instagram Area Start ##### -->
+    <!-- <div class="follow-us-instagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Follow Us Instragram</h5>
+                </div>
+            </div>
+        </div>
+        <div class="insta-feeds d-flex flex-wrap">
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta1.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta2.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta3.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta4.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta5.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta6.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="single-insta-feeds">
+                <img src="img/bg-img/insta7.jpg" alt="">
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ##### Follow Us Instagram Area End ##### -->
+    <!-- <div class="col-md-4 mb-4" style="margin-top: 120px;">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0" id="recipeListTitle">Recipe List</h5>
+            </div>
+            <input type="text" id="search" class="form-control my-2" placeholder="Search recipes...">
+            <ul class="list-group list-group-flush recipe-list" id="recipeList"></ul>
+        </div>
+    </div> -->
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Social Info -->
+                    <div class="footer-social-info text-right">
+                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        <a href="/">
+                        <!-- <img src="static/img/assameseRecipesLOGO.jpeg" alt="Logo" width="120" height="60"> -->
+                        <img src="static/img/LOGO.png" alt="Logo" width="145" height="50">
+
+                        
+                        </a>
+                    </div>
+                    <!-- Copywrite -->
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Sygmia Innovative</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="static/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="static/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="static/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="static/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="static/js/active.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        const recipesContainer = document.getElementById('recipeListElement');
+        let allRecipes = [];
+  
+        function displayRecipes(recipes) {
+            recipesContainer.innerHTML = '';
+  
+            recipes.forEach(recipe => {
+                const recipeCard = document.getElementById('recipe-card-template').content.cloneNode(true);
+  
+                // Update image
+                const imageElement = recipeCard.querySelector('[data-recipe-image]');
+                imageElement.src = recipe.image;
+                imageElement.alt = recipe.name;
+  
+  
+                // Update title and link
+                const titleElement = recipeCard.querySelector('[data-recipe-title]');
+                const linkElement = recipeCard.querySelector('[data-recipe-link]');
+                titleElement.textContent = recipe.name;
+                linkElement.href = `/recipe/${recipe.id}`;
+  
+                // Update ratings
+                const ratingsContainer = recipeCard.querySelector('[data-recipe-ratings]');
+                ratingsContainer.innerHTML = '';
+                for (let i = 0; i < 5; i++) {
+                    const star = document.createElement('i');
+                    star.classList.add('fa', i < Math.floor(recipe.rating) ? 'fa-star' : 'fa-star-o');
+                    star.setAttribute('aria-hidden', 'true');
+                    ratingsContainer.appendChild(star);
+                }
+  
+                recipesContainer.appendChild(recipeCard);
+            });
+        }
+  
+        async function fetchRecipes() {
+            try {
+                const response = await fetch('/recipes');
+                const data = await response.json();
+  
+                if (data && data.recipes) {
+                    allRecipes = data.recipes;
+                    displayRecipes(data.recipes);
+                } else {
+                    recipesContainer.innerHTML = '<li class="list-group-item text-danger">No recipes found.</li>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                recipesContainer.innerHTML = '<li class="list-group-item text-danger">Failed to load recipes.</li>';
+            }
+        }
+  
+        window.onload = fetchRecipes;
+      </script>
+    </body>
+    </html>
